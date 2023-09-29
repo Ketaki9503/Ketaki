@@ -66,7 +66,7 @@ public class Test {
 		}
 		else
 		{
-			System.out.println("Wrong choice");
+			System.out.println("Exit");
 			
 		}
 		}
