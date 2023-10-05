@@ -8,6 +8,7 @@ import com.cjc.ims.app.serviceimpl.Karvenagar;
 public class Test {
 public static void main(String[] args)
 {
+	
 	Cjc institude=new Karvenagar();
 	while(true) {
 		System.out.println("1.addCourse");
@@ -25,63 +26,56 @@ public static void main(String[] args)
 		System.out.println("Enter ur choice");
 		
 		
-		int i=sc.nextInt();{
+		int i=sc.nextInt();
+		
+		
+		
+		switch (i)
+		{
+		case 1:
+			institude.addCourse();
+			break;
 			
-			if(i==1)
-			{
-				
-				institude.addCourse();
-			}
-			else if(i==2)
-			{
-				
-				institude.viewCourse();
-			}
-			else if(i==3)
-			{
-				
-				institude.addFaculty();
-			}
-			else if(i==4)
-			{
-				
-				institude.viewFaculty();
-			}
-			else if(i==5)
-			{
-				
-				institude.addBatch();
-			}
-			else if(i==6)
-			{
-				
-				institude.viewBatch();
-			}
-			else if(i==7)
-			{
-				
-				institude.addStudent();
-			}
-			else if(i==8)
-			{
-				
-				institude.viewStudent();
-			}
-			else if(i==9)
-			{
-			System.exit(i);
+		case 2:
+			institude.viewCourse();
+			break;
 			
-			}
-//			
-//			else
-//			{
-//				System.out.println("Exit");
-//
-//			}
-
+		case 3:
+			institude.addFaculty();
+			break;
+			
+		case 4:
+			institude.viewFaculty();
+			break;
+			
+		case 5:
+			institude.addBatch();
+			break;
+			
+		case 6:
+			institude.viewBatch();
+			break;
+			
+		case 7:
+			institude.addStudent();
+			break;
+			
+		case 8:
+			institude.viewStudent();
+			
+		default :
+			System.out.println("Exit from application");
+			break;
+			
 		}
-	
+		
+	}
 }
+}	
+			
+			
+				
 
-}
-}
+
+
+
