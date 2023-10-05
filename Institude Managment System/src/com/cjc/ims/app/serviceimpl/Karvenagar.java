@@ -14,6 +14,7 @@ import com.cjc.ims.app.servicei.Cjc;
 
 public class Karvenagar implements Cjc
 {
+	int num;
 	int count;
 	Scanner sc;
 	Scanner s;
@@ -47,6 +48,9 @@ public class Karvenagar implements Cjc
 	}
 	public void viewCourse()
 	{
+		if(clist.isEmpty()==false) {
+			
+		
 		Iterator<Course> itr=clist.iterator();
 		int count=0;
 		while(itr.hasNext())
@@ -57,7 +61,14 @@ public class Karvenagar implements Cjc
 			System.out.println("Course id:- "+x.getCid());
 			System.out.println("Course name:- "+x.getCname());
 			System.out.println("*********************");
+			this.count=count;
+			
 		}
+	}
+	else if(clist.isEmpty())
+	{
+		System.out.println("Please add first Course details");
+	}
 	}
 	//------------------------------------------------------------------	
 		
@@ -65,6 +76,7 @@ public class Karvenagar implements Cjc
 		{
 			Faculty f=new Faculty();
 			Scanner sc=new Scanner(System.in);
+			
 			System.out.println("Enter the faculty id");
 			int x;
 			try {
@@ -103,6 +115,9 @@ public class Karvenagar implements Cjc
 			
 		public void viewFaculty()
 		{
+			if(flist.isEmpty()==false) {
+				
+			
 			Iterator<Faculty> itr1=flist.iterator();
 			int count=0;
 			while(itr1.hasNext())
@@ -119,6 +134,11 @@ public class Karvenagar implements Cjc
 				
 			}
 	}
+			else if(flist.isEmpty())
+			{
+				System.out.println("please enter first faculty details");
+			}
+}
 //----------------------------------------------------------------------
 	
 	 public void addBatch()
@@ -144,9 +164,9 @@ public class Karvenagar implements Cjc
 		 System.out.println("Enter the Batch name");
 		 String s2=sc.next()+sc.nextLine();
 		 b.setBname(s2);
-		 System.out.println("Enter your the Faculty no ");
+		// System.out.println("Enter your the Faculty no ");
 			viewFaculty();
-			 System.out.println("Enter the Faculty for batch");
+			 System.out.println("Enter the Faculty id for batch");
 			int x1=sc.nextInt();
 			Iterator<Faculty> fitr=flist.iterator();
 			while(fitr.hasNext())
@@ -155,9 +175,9 @@ public class Karvenagar implements Cjc
 				Faculty faculty=(Faculty)fitr.next();
 			for(int i=0;i<=x1;i++)
 			{
-				if (x1==i)
+				if (x1==faculty.getFid())
 			{
-			b.setFaculty(flist.get(i-1));
+			b.setFaculty(faculty);
 		}
 			}
 			}
@@ -166,6 +186,9 @@ public class Karvenagar implements Cjc
 	 }
 	 public void viewBatch()
 	 {
+		 if(blist.isEmpty()==false) {
+			 
+		 
 		 Iterator<Batch>itr2=blist.iterator();
 		 int count=0;
 		 while(itr2.hasNext())
@@ -183,6 +206,11 @@ public class Karvenagar implements Cjc
 			 	 
 		 }
 	 }
+		else if(blist.isEmpty())
+		{
+			System.out.println("please enter first batch details");
+		}
+}
 //------------------------------------------------------------------------
 	 public void addStudent()
 	 {
@@ -210,7 +238,7 @@ public class Karvenagar implements Cjc
 		 
 		// System.out.println("Enter your the Batch no ");
 			viewBatch();
-			 System.out.println("Enter the batch no");
+			 System.out.println("Enter the batch id");
 			int x2=sc.nextInt();
 			Iterator<Batch> bitr=blist.iterator();
 			while(bitr.hasNext())
@@ -218,9 +246,9 @@ public class Karvenagar implements Cjc
 				Batch batch=(Batch)bitr.next();
 			for(int i=0;i<=x2;i++)
 			{
-				if (x2==i)
+				if (x2==batch.getBid())
 				{
-					stu.setBatch(blist.get(i-1));
+					stu.setBatch(batch);
 				}
 			}
 			}	 
@@ -229,6 +257,8 @@ public class Karvenagar implements Cjc
 	 
 	 public void viewStudent()
 	 {
+		 if(slist.isEmpty()==false) {
+			 
 		 Iterator<Student>itr3=slist.iterator();
 		 int count=0;
 		 while(itr3.hasNext())
@@ -245,6 +275,11 @@ public class Karvenagar implements Cjc
 			 System.out.println("****************");
 			
 			 	 
+		 }
+	 }
+		 else if(slist.isEmpty())
+		 {
+			 System.out.println("please enter frist Student details");
 		 }
 	 }
 }
